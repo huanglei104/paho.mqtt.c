@@ -668,7 +668,7 @@ void MQTTProtocol_keepalive(START_TIME_TYPE now)
 		Clients* client =	(Clients*)(current->content);
 		ListNextElement(bstate->clients, &current);
 
-		if (client->connected == 0 || client->keepAliveInterval == 0)
+		if (client->connected == 0 || client->reconTime == 0)
 			continue;
 
 		if (client->ping_outstanding == 1)

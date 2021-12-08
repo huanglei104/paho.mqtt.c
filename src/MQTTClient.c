@@ -1465,6 +1465,7 @@ static MQTTResponse MQTTClient_connectURI(MQTTClient handle, MQTTClient_connectO
 	setRetryLoopInterval(options->keepAliveInterval);
 	m->c->MQTTVersion = options->MQTTVersion;
 	m->c->cleanstart = m->c->cleansession = 0;
+	m->c->reconTime = options->reconTime;
 	if (m->c->MQTTVersion >= MQTTVERSION_5)
 		m->c->cleanstart = options->cleanstart;
 	else
